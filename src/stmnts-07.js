@@ -14,6 +14,7 @@
  */
 function logicalAnd(a, b) {
   // write your code here & return
+  return a && b;
 }
 
 /**
@@ -24,6 +25,7 @@ function logicalAnd(a, b) {
  */
 function logicalOr(a, b) {
   // write your code here & return
+  return a || b;
 }
 
 /**
@@ -33,6 +35,7 @@ function logicalOr(a, b) {
  */
 function invertBoolean(bool) {
   // write your code here & return
+  return !bool;
 }
 
 /**
@@ -50,6 +53,11 @@ function invertBoolean(bool) {
  */
 function numberOfOdds(num) {
   // write your code here & return
+  let val = 0;
+  for (let i = 0; i < num; i += 1) {
+    if (i % 2 === 1) val += 1;
+  }
+  return val;
 }
 
 /**
@@ -63,6 +71,11 @@ function numberOfOdds(num) {
  */
 function addUpTheNumbers(num) {
   // write your code here & return
+  let val = 0;
+  for (let i = 0; i <= num; i += 1) {
+    val += i;
+  }
+  return val;
 }
 
 /**
@@ -82,6 +95,15 @@ function addUpTheNumbers(num) {
  */
 function gradeGenerator(score) {
   // write your code here & return
+  if (score < 60) {
+    return 'F';
+  } if (score < 70) {
+    return 'D';
+  } if (score < 80) {
+    return 'C';
+  } if (score < 90) {
+    return 'B';
+  } return 'A';
 }
 
 /**
@@ -97,11 +119,16 @@ function gradeGenerator(score) {
  * ? return a string written like:
  * ? Francine got an A
  * ? David got a B
- * ? note: you have to use English grammar's correct indefinite article 
+ * ? note: you have to use English grammar's correct indefinite article
  * ? it's 'an A' (not a A) and 'an F' (not a F)
  */
 function getGrade(name, score) {
   // write your code here & return
+  const grade = gradeGenerator(score);
+  if (grade === 'A' || grade === 'F') {
+    return `${name} got an ${grade}`;
+  }
+  return `${name} got a ${grade}`;
 }
 
 module.exports = {
